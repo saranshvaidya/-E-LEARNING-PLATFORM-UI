@@ -1,0 +1,527 @@
+/* Google Fonts (optional) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #f1f1f1;
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Variables */
+:root {
+  --primary: #bb86fc;
+  --accent: #9b59b6;
+  --text-dark: #f1f1f1;
+  --bg-light: #1e1e1e;
+  --shadow: rgba(0, 0, 0, 0.5);
+  --spacing: 2rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem var(--spacing);
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.navbar .nav-links a {
+  font-weight: 600;
+  transition: color 0.3s ease;
+  padding: 0.3rem 0;
+}
+
+.navbar .nav-links a:hover {
+  color: var(--accent);
+}
+
+.navbar .login-btn {
+  background: var(--accent);
+  color: var(--primary);
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  margin-left: auto;
+}
+
+.navbar .login-btn:hover {
+  background: #9b59b6;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(120deg, #1f1b24, #2c2c2c);
+  color: #ffffff;
+  padding: 6rem var(--spacing);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .btn {
+  background-color: var(--accent);
+  color: #000;
+  padding: 0.9rem 2.2rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  opacity: 0;
+  scale: 0;
+}
+
+.hero .btn:hover {
+  background-color: white;
+  transform: scale(1.05);
+}
+
+/* Features Section */
+.features {
+  padding: 5rem var(--spacing);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  background-color: #181818;
+}
+
+.feature {
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px var(--shadow);
+  transition: transform 0.3s;
+  text-align: center;
+  opacity: 0;
+  scale: 0;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+}
+
+.feature h2 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.feature p {
+  color: #ccc;
+}
+
+/* Courses Section */
+.courses-list {
+  padding: 5rem var(--spacing);
+}
+
+.courses-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+.course-card {
+  background-color: var(--bg-light);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px var(--shadow);
+  text-align: center;
+  transition: all 0.3s ease;
+  opacity: 0;
+  scale: 0;
+}
+
+.course-card:hover {
+  transform: scale(1.03);
+}
+
+.course-card h3 {
+  color: var(--primary);
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+}
+
+.course-card p {
+  color: #ccc;
+  margin-bottom: 1.2rem;
+}
+
+.course-card .btn {
+  background: var(--primary);
+  color: #000;
+  padding: 0.7rem 1.6rem;
+  border-radius: 25px;
+  border: none;
+  transition: background 0.3s;
+}
+
+.course-card .btn:hover {
+  background: #9b59b6;
+}
+
+/* Forms (Login/Signup) */
+form {
+  max-width: 500px;
+  margin: 5rem auto;
+  background: var(--bg-light);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px var(--shadow);
+}
+
+form h2 {
+  color: var(--primary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+form input {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 1px solid #444;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+form button {
+  background: var(--primary);
+  color: #000;
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #9b59b6;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background-color: #121212;
+  color: #aaa;
+  padding: 2.5rem var(--spacing);
+  margin-top: 5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Course Detail Styles */
+.course-detail {
+  padding: 4rem 2rem;
+  min-height: 100vh;
+}
+
+.course-detail-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  border-radius: 12px;
+  background-color: var(--bg-light);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.course-detail h1 {
+  color: var(--primary);
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.course-detail p {
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  text-align: justify;
+}
+
+.course-video {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.course-video iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.course-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.course-meta div {
+  flex: 1 1 200px;
+  background-color: #272727;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  color: #ddd;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
+}
+
+.course-syllabus {
+  margin-top: 1vw;
+}
+
+.l2s {
+  font-size: 0.9rem;
+  color: #ccc;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.l2s a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .course-detail-container {
+    padding: 1.5rem;
+  }
+
+  .course-detail h1 {
+    font-size: 2rem;
+  }
+
+  .course-video iframe {
+    height: 300px;
+  }
+
+  .course-meta {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero .btn {
+    width: 100%;
+  }
+
+  .navbar .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .navbar .login-btn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+/* Recent Activities Section */
+.recent-activities {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.recent-activities ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.recent-activities li {
+  color: #ccc;
+  margin-bottom: 0.8rem;
+}
+
+.recent-activities li strong {
+  color: #bb86fc;
+}
+
+/* User Stats Section */
+.user-stats {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.user-stats .stats-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.user-stats .stat {
+  background-color: #2a2a2a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  color: #ccc;
+  flex: 1;
+}
+
+.user-stats .stat h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.user-stats .stat p {
+  font-size: 1.2rem;
+}
+
+/* Notifications Section */
+.notifications {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.notifications .notification-item {
+  background-color: #2a2a2a;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.2rem;
+}
+
+.notifications .notification-item p {
+  color: #ccc;
+}
+
+.notifications .notification-item strong {
+  color: var(--primary);
+}
+
+.chart-container {
+  width: 30vw;  /* Set width to 60% of the viewport width */
+  height: 30vw; /* Set height to match the width to maintain a circular shape */
+  max-width: 30vw;  /* Optional: limit the maximum width */
+  max-height: 30vw;  /* Optional: limit the maximum height */
+  margin: 0 auto;  /* Center it horizontally */
+}
+
+.progress-details {
+  padding: 2vw;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.dash-header {
+  background-color: #121212;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw 2vw;
+  margin-bottom: 0vw;
+}
+
+.dash-header h1 {
+  color: #bb86fc;
+}
+
+.dash-header a:hover {
+  color: #bb86fc;
+  transition: all 0.5s ease;
+}
+
+.dashboard{
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+.card h2{
+  margin-bottom: 2vw;
+}
+
+.card {
+  background-color: #2a2a2a;
+  padding: 1.5vw;
+  border-radius: 8px;
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 2vw;
+}

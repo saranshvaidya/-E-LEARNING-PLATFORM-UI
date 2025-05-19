@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduNex Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div data-scroll-container>
+        
+        <header class="dash-header">
+            <h1>EduNex Dashboard</h1>
+            <a href="index.html" class="back-link">← Back to Home</a>
+        </header>
+    
+        <main class="dashboard">
+            <section class="card ">
+                <h2>Your Learning Progress</h2>
+                <div class="content">
+                    <div class="chart-container">
+                        <canvas id="progressChart"></canvas>
+                    </div>
+                    <div class="progress-details">
+                        <p><strong>Courses Enrolled:</strong> 5</p>
+                        <p><strong>Courses Completed:</strong> 3</p>
+                        <p><strong>Current Course:</strong> JavaScript Essentials</p>
+                        <p><strong>Progress:</strong> 60%</p>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- New Section: Recent Activities -->
+            <section class="card recent-activities">
+                <h2>Recent Activities</h2>
+                <ul>
+                    <li><strong>Completed:</strong> JavaScript Basics Quiz</li>
+                    <li><strong>Started:</strong> Python for Beginners</li>
+                    <li><strong>Commented:</strong> on Web Development Forum</li>
+                </ul>
+            </section>
+    
+            <!-- New Section: User Stats -->
+            <section class="card user-stats">
+                <h2>User Stats</h2>
+                <div class="stats-container">
+                    <div class="stat">
+                        <h3>Time Spent</h3>
+                        <p>32 hours</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Quiz Score</h3>
+                        <p>85%</p>
+                    </div>
+                    <div class="stat">
+                        <h3>Certificates Earned</h3>
+                        <p>2</p>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- New Section: Notifications -->
+            <section class="card notifications">
+                <h2>Notifications</h2>
+                <div class="notification-item">
+                    <p><strong>New Course Available:</strong> React for Beginners!</p>
+                </div>
+                <div class="notification-item">
+                    <p><strong>Quiz Reminder:</strong> Your JavaScript Quiz is due tomorrow.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('progressChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Completed', 'Remaining'],
+                datasets: [{
+                    data: [60, 40],
+                    backgroundColor: ['#bb86fc', '#2a2a2a'],  // Updated to your desired color
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            color: '#ccc'
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+      <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+      integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="dashboard.js"></script>
+</body>
+
+</html>
